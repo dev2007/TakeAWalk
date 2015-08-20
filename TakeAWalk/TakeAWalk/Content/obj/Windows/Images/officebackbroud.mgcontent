@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackbroud.png</SourceFile>
+  <SourceTime>2015-08-20T13:08:30.6215218+08:00</SourceTime>
+  <DestFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Images/officebackbroud.xnb</DestFile>
+  <DestTime>2015-08-20T13:09:38.3473955+08:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2015-08-18T19:16:32+08:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2015-08-18T19:16:32+08:00</ProcessorTime>
+  <Parameters>
+    <Key>ColorKeyColor</Key>
+    <Value>255,0,255,255</Value>
+  </Parameters>
+  <Parameters>
+    <Key>ColorKeyEnabled</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>GenerateMipmaps</Key>
+    <Value>False</Value>
+  </Parameters>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>ResizeToPowerOfTwo</Key>
+    <Value>False</Value>
+  </Parameters>
+  <Parameters>
+    <Key>MakeSquare</Key>
+    <Value>False</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Color</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

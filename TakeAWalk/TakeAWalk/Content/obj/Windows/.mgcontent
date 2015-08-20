@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/office.jpg</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackbroud.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/start.png</File>
+  </SourceFiles>
+</SourceFileCollection>
