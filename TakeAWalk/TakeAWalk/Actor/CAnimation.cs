@@ -46,7 +46,7 @@ namespace TakeAWalk.Actor
         /// Set animation frame number.
         /// If the paramater is less than 1,then the frame number will be setted with the default value.
         /// </summary>
-        /// <param name="frame"></param>
+        /// <param name="newFrameCount">new frame count.Bigger,then slow.</param>
         public void SetFrame(int newFrameCount)
         {
             if (newFrameCount <= 0)
@@ -60,16 +60,16 @@ namespace TakeAWalk.Actor
         /// Set animation frame count.The frame size is texture.width / count;
         /// If the frame count is less than 1,then it will be setted with the default value.
         /// </summary>
-        /// <param name="frameCount"></param>
-        public void SetFrameCount(int frameCount)
+        /// <param name="splitCount"></param>
+        public void SetFrameSplitCount(int splitCount)
         {
-            if (frameCount <= 0)
+            if (splitCount <= 0)
             {
                 this.frameWidthSize = Global.STANDARD_ANIMATION_SIZE;
             }
             else
             {
-                this.frameWidthSize = texture.Width / frameCount;
+                this.frameWidthSize = texture.Width / splitCount;
             }
         }
 
@@ -90,7 +90,6 @@ namespace TakeAWalk.Actor
             }
             drawRect = new Rectangle(frameIndex * frameWidthSize, 0,frameWidthSize, texture.Height);
         }
-
 
 
         public override void StateChange(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)

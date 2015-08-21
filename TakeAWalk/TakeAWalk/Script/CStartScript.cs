@@ -30,7 +30,7 @@ namespace TakeAWalk.Script
             CAnimation actor2 = new CAnimation(ani,
                 new Microsoft.Xna.Framework.Vector2(Global.WINDOW_WIDTH/2 -20, (Global.WINDOW_HEIGHT - ani.Height) / 2 + 10),
                 1);
-            actor2.SetFrameCount(4);
+            actor2.SetFrameSplitCount(4);
             actor2.SetFrame(100);
             stage.HireActor(actor2);
         }

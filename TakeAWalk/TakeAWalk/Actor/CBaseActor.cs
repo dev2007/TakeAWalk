@@ -34,6 +34,12 @@ namespace TakeAWalk.Actor
         /// </summary>
         protected bool isRunning;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="texture">Texture2D resource.It is a image which is consist of sequent frame images.</param>
+        /// <param name="vector">Draw postion.</param>
+        /// <param name="layerDepth">Layer Depth.</param>
         public CBaseActor(Texture2D texture, Vector2 vector, float layerDepth)
         {
             this.isRunning = true;
