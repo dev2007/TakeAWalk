@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackbroud.png</SourceFile>
-  <SourceTime>2015-08-20T13:08:30.6215218+08:00</SourceTime>
-  <DestFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Images/officebackbroud.xnb</DestFile>
-  <DestTime>2015-08-20T13:09:38.3473955+08:00</DestTime>
+  <SourceFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/title.png</SourceFile>
+  <SourceTime>2015-08-21T11:20:18.7960079+08:00</SourceTime>
+  <DestFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Images/title.xnb</DestFile>
+  <DestTime>2015-08-21T11:22:19.8119297+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-08-18T19:16:32+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

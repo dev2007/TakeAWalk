@@ -10,39 +10,39 @@ using TakeAWalk.Stage;
 
 namespace TakeAWalk.Script
 {
-    public class CStartScript:IScript
+    /// <summary>
+    /// Start scene.
+    /// </summary>
+    public class CStartScript:CBaseScript
     {
-        private CStage stage;
-        private ContentManager contentManager;
-        public CStartScript(ContentManager contentManager)
+        public CStartScript(ContentManager contentManager):base(contentManager)
         {
-            this.contentManager = contentManager;
-            stage = new CStage();
-            AddActors();
         }
 
-        private void AddActors()
+        protected override void CreateStage()
         {
-            Texture2D texture = Get2D(@"Images\office");
-            CActor actor = new CActor(texture, new Vector2((Global.WINDOW_WIDTH - texture.Width) / 2, (Global.WINDOW_HEIGHT - texture.Height) / 2),1);
-            stage.HireActor(actor);
-            Texture2D ani = Get2D(@"Sprites\start");
-            CAnimation actor2 = new CAnimation(ani,
-                new Microsoft.Xna.Framework.Vector2(Global.WINDOW_WIDTH/2 -20, (Global.WINDOW_HEIGHT - ani.Height) / 2 + 10),
-                1);
-            actor2.SetFrameSplitCount(4);
-            actor2.SetFrame(100);
-            stage.HireActor(actor2);
-        }
+            Texture2D back = Get2D(@"Images\officebackground");
+            CActor actorBack = new CActor(back, new Vector2(0, 0), Z_Axis.BACKGROUND);
+            actorBack.SetDrawRect(Global.WINDOW_WIDTH, Global.WINDOW_HEIGHT);
+            stage.HireActor(actorBack);
 
-        private Texture2D Get2D(string pathWithName)
-        {
-            return contentManager.Load<Texture2D>(pathWithName);
-        }
+            Texture2D title = Get2D(@"Images\title");
+            CActor actorTitle = new CActor(title, new Vector2((Global.WINDOW_WIDTH - title.Width) / 2 + 10, 20), Z_Axis.STAGE);
+            stage.HireActor(actorTitle);
 
-        public Stage.CStage CreateStage()
-        {
-            return stage;
+            Texture2D office = Get2D(@"Images\office");
+            CActor actorOffice = new CActor(office, 
+                new Vector2((Global.WINDOW_WIDTH - office.Width) / 2, (Global.WINDOW_HEIGHT - office.Height) / 2), Z_Axis.STAGE);
+            stage.HireActor(actorOffice);
+
+            Texture2D man = Get2D(@"Sprites\start");
+            CAnimation actorMan = new CAnimation(man,
+                new Microsoft.Xna.Framework.Vector2(Global.WINDOW_WIDTH / 2 - 20, (Global.WINDOW_HEIGHT - man.Height) / 2 + 10),
+                Z_Axis.ZERO);
+            actorMan.SetFrameSplitCount(4);
+            actorMan.SetFrame(100);
+            stage.HireActor(actorMan);
+
         }
     }
 }

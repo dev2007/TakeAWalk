@@ -5,8 +5,9 @@
   <Config />
   <SourceFiles>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/office.jpg</File>
-    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackbroud.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/start.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackground.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/title.png</File>
   </SourceFiles>
 </SourceFileCollection>

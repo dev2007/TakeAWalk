@@ -7,11 +7,11 @@ using TakeAWalk.Stage;
 namespace TakeAWalk.Script
 {
     /// <summary>
-    /// Interface for story script.
+    /// Interface of story script.
     /// It creates a stage which contains some actors for director.
     /// </summary>
     public interface IScript
     {
-        CStage CreateStage();
+        CStage GetStage();
     }
 }

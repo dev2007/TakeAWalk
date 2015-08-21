@@ -38,7 +38,6 @@ namespace TakeAWalk
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            TouchPanel.EnabledGestures = GestureType.Flick;
 
             base.Initialize();
         }
@@ -53,9 +52,7 @@ namespace TakeAWalk
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            Texture2D texture = this.Content.Load<Texture2D>(@"Images\office");
             director = new CDirector(new CStartScript(this.Content));
-
         }
 
         /// <summary>
@@ -78,11 +75,7 @@ namespace TakeAWalk
                 Exit();
 
             // TODO: Add your update logic here
-            if (TouchPanel.IsGestureAvailable)
-            {
-                director.StateChange(TouchPanel.ReadGesture());
-            }else
-                director.Update(gameTime);
+            director.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -95,7 +88,7 @@ namespace TakeAWalk
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront);
             
             director.Draw(spriteBatch, gameTime);      
             spriteBatch.End();

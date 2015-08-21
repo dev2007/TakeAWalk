@@ -18,17 +18,12 @@ namespace TakeAWalk
 
         public CDirector(IScript storyScript)
         {
-            stage = storyScript.CreateStage();
+            stage = storyScript.GetStage();
         }
 
         public void SwitchScript(IScript storyScript)
         {
-            stage = storyScript.CreateStage();
-        }
-
-        public void StateChange(GestureSample gesture)
-        {
-            stage.StateChange(gesture);
+            stage = storyScript.GetStage();
         }
 
         public void Update(Microsoft.Xna.Framework.GameTime gameTime)

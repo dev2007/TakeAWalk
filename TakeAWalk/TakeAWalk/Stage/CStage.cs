@@ -33,14 +33,6 @@ namespace TakeAWalk.Stage
             actorList.Remove(actor);
         }
 
-        public void StateChange(GestureSample gesture)
-        {
-            foreach (ISprite actor in actorList)
-            {
-                actor.StateChange(gesture);
-            }
-        }
-
         public void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             foreach (ISprite actor in actorList)

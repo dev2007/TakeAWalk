@@ -8,9 +8,12 @@ using System.Text;
 
 namespace TakeAWalk
 {
-    interface ISprite
+    /// <summary>
+    /// Interface of Sprite.
+    /// Classe must inherit it which needs Draw & Update functions.
+    /// </summary>
+    public interface ISprite
     {
-        void StateChange(GestureSample gesture);
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch,GameTime gameTime);
     }

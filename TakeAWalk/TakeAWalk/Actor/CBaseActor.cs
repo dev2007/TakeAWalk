@@ -38,15 +38,15 @@ namespace TakeAWalk.Actor
         /// Constructor.
         /// </summary>
         /// <param name="texture">Texture2D resource.It is a image which is consist of sequent frame images.</param>
-        /// <param name="vector">Draw postion.</param>
+        /// <param name="drawPosition">Draw postion.</param>
         /// <param name="layerDepth">Layer Depth.</param>
-        public CBaseActor(Texture2D texture, Vector2 vector, float layerDepth)
+        public CBaseActor(Texture2D texture, Vector2 drawPosition, float layerDepth)
         {
             this.isRunning = true;
             this.timeSinceLastFrame = 0;
             this.layerDepth = layerDepth;
             this.texture = texture;
-            this.drawPosition = vector; 
+            this.drawPosition = drawPosition; 
             this.drawRect = new Rectangle(new Point(0, 0), new Point(texture.Width, texture.Height));
         }
 
@@ -75,13 +75,9 @@ namespace TakeAWalk.Actor
             isRunning = false;
         }
 
-        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
+        public virtual void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
         {
-            spriteBatch.Draw(texture, drawPosition, drawRect, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
-        }
-
-        public virtual void StateChange(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
-        {
+            spriteBatch.Draw(texture, drawPosition,drawRect, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
         }
 
         public virtual void Update(GameTime gameTime)

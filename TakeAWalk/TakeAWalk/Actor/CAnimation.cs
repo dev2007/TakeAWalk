@@ -90,14 +90,5 @@ namespace TakeAWalk.Actor
             }
             drawRect = new Rectangle(frameIndex * frameWidthSize, 0,frameWidthSize, texture.Height);
         }
-
-
-        public override void StateChange(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
-        {
-            if(gesture.GestureType == GestureType.Flick)
-            {
-                isRunning = !isRunning;
-            }
-        }
     }
 }
