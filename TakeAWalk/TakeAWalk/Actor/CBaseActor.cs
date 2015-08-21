@@ -4,9 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TakeAWalk.Stage;
 
 namespace TakeAWalk.Actor
 {
+    /// <summary>
+    /// base class of actor.b
+    /// </summary>
     public class CBaseActor:ISprite,IActor
     {
         /// <summary>
@@ -33,6 +37,10 @@ namespace TakeAWalk.Actor
         /// animation running flag. 
         /// </summary>
         protected bool isRunning;
+        /// <summary>
+        /// stage contains this actor. 
+        /// </summary>
+        private CStage stage;
 
         /// <summary>
         /// Constructor.
@@ -82,6 +90,25 @@ namespace TakeAWalk.Actor
 
         public virtual void Update(GameTime gameTime)
         {
+        }
+
+        public void RegisterStage(CStage stage)
+        {
+            this.stage = stage;
+        }
+
+        public void UnRegisterStage(CStage stage)
+        {
+            this.stage = null;
+        }
+
+
+        public void NotifyStage(Notice notice)
+        {
+            if(stage != null)
+            {
+                stage.ReceiveNotice(notice);
+            }
         }
     }
 }

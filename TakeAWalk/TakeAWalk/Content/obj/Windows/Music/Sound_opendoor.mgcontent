@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Music/Sound_opendoor.mp3</SourceFile>
+  <SourceTime>2015-08-18T14:14:51.7166328+08:00</SourceTime>
+  <DestFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Music/Sound_opendoor.xnb</DestFile>
+  <DestTime>2015-08-21T13:11:00.5838965+08:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2015-08-18T19:16:32+08:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2015-08-18T19:16:32+08:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Music/Sound_opendoor.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

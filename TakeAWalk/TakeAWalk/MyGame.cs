@@ -52,7 +52,9 @@ namespace TakeAWalk
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            director = new CDirector(new CStartScript(this.Content));
+            director = new CDirector();
+            director.AddScript(new CStartScript(this.Content));
+            director.Action();
         }
 
         /// <summary>

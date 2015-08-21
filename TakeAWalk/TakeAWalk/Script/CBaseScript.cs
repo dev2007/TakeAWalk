@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,13 +35,23 @@ namespace TakeAWalk.Script
         }
 
         /// <summary>
-        /// Tool function for get resource by the resource's name.
+        /// Tool function for getting Texture2D resource by the resource's name.
         /// </summary>
         /// <param name="pathWithName">resource's full path & name.</param>
         /// <returns></returns>
         protected Texture2D Get2D(string pathWithName)
         {
             return contentManager.Load<Texture2D>(pathWithName);
+        }
+
+        /// <summary>
+        /// Tool function for getting music resource by the rerource's name.
+        /// </summary>
+        /// <param name="pathWithName"></param>
+        /// <returns></returns>
+        protected Song GetSong(string pathWithName)
+        {
+            return contentManager.Load<Song>(pathWithName);
         }
 
         /// <summary>

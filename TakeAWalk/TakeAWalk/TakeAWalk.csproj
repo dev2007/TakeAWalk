@@ -44,6 +44,7 @@
     <Compile Include="Actor\IActor.cs" />
     <Compile Include="CDirector.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="INotice.cs" />
     <Compile Include="ISprite.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="Program.cs" />

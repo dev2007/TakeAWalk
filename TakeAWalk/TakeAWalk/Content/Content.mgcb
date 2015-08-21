@@ -73,3 +73,51 @@
 /processorParam:TextureFormat=Color
 /build:Images/title.png
 
+#begin Music/Sound_calm.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_calm.mp3
+
+#begin Music/Sound_fly.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_fly.mp3
+
+#begin Music/Sound_happy.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_happy.mp3
+
+#begin Music/Sound_keyboard.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_keyboard.mp3
+
+#begin Music/Sound_opendoor.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_opendoor.mp3
+
+#begin Music/Sound_ring.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_ring.mp3
+
+#begin Music/Sound_sohappy.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_sohappy.mp3
+
+#begin Music/Sound_unhappy.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/Sound_unhappy.mp3
+
