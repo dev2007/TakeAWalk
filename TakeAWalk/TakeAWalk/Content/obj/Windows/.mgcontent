@@ -5,7 +5,6 @@
   <Config />
   <SourceFiles>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/office.jpg</File>
-    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/start.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/officebackground.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/title.png</File>
@@ -17,5 +16,8 @@
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Music/Sound_ring.mp3</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Music/Sound_sohappy.mp3</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Music/Sound_unhappy.mp3</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/headphone.bmp</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/wait.png</File>
   </SourceFiles>
 </SourceFileCollection>

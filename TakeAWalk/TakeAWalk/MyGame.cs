@@ -54,6 +54,8 @@ namespace TakeAWalk
             // TODO: use this.Content to load your game content here
             director = new CDirector();
             director.AddScript(new CStartScript(this.Content));
+            director.AddScript(new CWaitScript(this.Content));
+            director.AddScript(new CCityScript(this.Content));
             director.Action();
         }
 
@@ -87,10 +89,10 @@ namespace TakeAWalk
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.White);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.BackToFront);
+            spriteBatch.Begin(SpriteSortMode.BackToFront,BlendState.NonPremultiplied);
             
             director.Draw(spriteBatch, gameTime);      
             spriteBatch.End();

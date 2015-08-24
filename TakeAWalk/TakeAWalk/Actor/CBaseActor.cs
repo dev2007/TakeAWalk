@@ -42,6 +42,8 @@ namespace TakeAWalk.Actor
         /// </summary>
         private CStage stage;
 
+        protected Color maskColor;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -50,6 +52,7 @@ namespace TakeAWalk.Actor
         /// <param name="layerDepth">Layer Depth.</param>
         public CBaseActor(Texture2D texture, Vector2 drawPosition, float layerDepth)
         {
+            this.maskColor = Color.White;
             this.isRunning = true;
             this.timeSinceLastFrame = 0;
             this.layerDepth = layerDepth;
@@ -85,24 +88,36 @@ namespace TakeAWalk.Actor
 
         public virtual void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
         {
-            spriteBatch.Draw(texture, drawPosition,drawRect, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
+            spriteBatch.Draw(texture, drawPosition,drawRect, maskColor, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
         }
 
         public virtual void Update(GameTime gameTime)
         {
         }
 
+        /// <summary>
+        /// Registe stage.
+        /// </summary>
+        /// <param name="stage"></param>
         public void RegisterStage(CStage stage)
         {
             this.stage = stage;
         }
 
+        /// <summary>
+        /// Unregiste stage.
+        /// </summary>
+        /// <param name="stage"></param>
         public void UnRegisterStage(CStage stage)
         {
             this.stage = null;
         }
 
 
+        /// <summary>
+        /// notify the stage.
+        /// </summary>
+        /// <param name="notice"></param>
         public void NotifyStage(Notice notice)
         {
             if(stage != null)

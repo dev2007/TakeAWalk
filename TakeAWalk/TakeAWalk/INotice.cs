@@ -5,6 +5,10 @@ using System.Text;
 
 namespace TakeAWalk
 {
+    /// <summary>
+    /// Interface of notice.
+    /// Transfer message from actor to director.
+    /// </summary>
     public interface INotice
     {
         void ReceiveNotice(Notice notice);
@@ -22,6 +26,10 @@ namespace TakeAWalk
         /// <summary>
         /// Current action finish.
         /// </summary>
-        ACTION_FINISH = 1
+        ACTION_FINISH = 1,
+        /// <summary>
+        /// switch stage
+        /// </summary>
+        SWTICH_STAGE = 2
     }
 }

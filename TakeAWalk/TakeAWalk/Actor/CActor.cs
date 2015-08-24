@@ -14,7 +14,7 @@ namespace TakeAWalk.Actor
     /// </summary>
     public class CActor:CBaseActor
     {
-        private Rectangle destinationRectangle;
+        protected Rectangle destinationRectangle;
         public CActor(Texture2D texture, Vector2 drawPosition, float layerDepth)
             : base(texture, drawPosition, layerDepth)
         {
@@ -25,8 +25,7 @@ namespace TakeAWalk.Actor
         {
             //spriteBatch.Draw(texture, drawPosition, drawRect, Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
             //spriteBatch.Draw(texture, destinationRectangle, Color.White);
-            spriteBatch.Draw(texture,destinationRectangle, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, layerDepth);
-            
+            spriteBatch.Draw(texture,destinationRectangle, null, maskColor, 0f, Vector2.Zero, SpriteEffects.None, layerDepth);
         }
 
         public void SetDrawRect(int drawWidth,int drawHeight,Vector2? newDrawPosition = null)

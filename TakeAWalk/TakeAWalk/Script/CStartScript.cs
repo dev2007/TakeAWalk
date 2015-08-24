@@ -18,6 +18,7 @@ namespace TakeAWalk.Script
     {
         public CStartScript(ContentManager contentManager):base(contentManager)
         {
+            this.stage = new CStartStage();
         }
 
         protected override void CreateStage()
@@ -32,7 +33,7 @@ namespace TakeAWalk.Script
             stage.HireActor(actorTitle);
 
             Texture2D office = Get2D(@"Images\office");
-            CActor actorOffice = new CActor(office, 
+            CActor actorOffice = new CActor(office,
                 new Vector2((Global.WINDOW_WIDTH - office.Width) / 2, (Global.WINDOW_HEIGHT - office.Height) / 2), Z_Axis.STAGE);
             stage.HireActor(actorOffice);
 

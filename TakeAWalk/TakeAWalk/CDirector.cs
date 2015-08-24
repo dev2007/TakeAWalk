@@ -12,7 +12,7 @@ namespace TakeAWalk
     /// class Director.
     /// It draw the stage which is created by one story script.
     /// </summary>
-    public class CDirector  : ISprite,INotice
+    public class CDirector : ISprite, INotice
     {
         /// <summary>
         /// Current stage object.
@@ -39,6 +39,10 @@ namespace TakeAWalk
             this.stageIndex = -1;
         }
 
+        /// <summary>
+        /// add script for director.
+        /// </summary>
+        /// <param name="storyScript"></param>
         public void AddScript(IScript storyScript)
         {
             scriptList.Add(storyScript);
@@ -59,7 +63,10 @@ namespace TakeAWalk
         /// <returns>True.switch ok. False.no more script.</returns>
         public bool NextScript()
         {
-            if(stageIndex == scriptList.Count -1)
+            if (currentStage != null)
+                currentStage.ReceiveNotice(Notice.SWTICH_STAGE);
+
+            if (stageIndex == scriptList.Count - 1)
             {
                 return false;
             }
@@ -70,6 +77,10 @@ namespace TakeAWalk
             return true;
         }
 
+        /// <summary>
+        /// Receive notice.
+        /// </summary>
+        /// <param name="notice"></param>
         public void ReceiveNotice(Notice notice)
         {
             switch (notice)
@@ -79,6 +90,7 @@ namespace TakeAWalk
                 case Notice.ACTION_FINISH:
                     if (!NextScript())
                     {
+                        currentStage = new CStage();
                         //TODO:all scene finish.
                     }
                     break;
@@ -110,6 +122,6 @@ namespace TakeAWalk
             currentStage.Draw(spriteBatch, gameTime);
         }
 
-       
+
     }
 }

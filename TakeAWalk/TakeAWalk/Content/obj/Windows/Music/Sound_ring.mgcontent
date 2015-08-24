@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Music/Sound_ring.mp3</SourceFile>
-  <SourceTime>2015-08-18T14:14:51.7006318+08:00</SourceTime>
+  <SourceTime>2015-08-21T13:52:22.3928478+08:00</SourceTime>
   <DestFile>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/bin/Windows/Music/Sound_ring.xnb</DestFile>
-  <DestTime>2015-08-21T13:11:00.7179041+08:00</DestTime>
+  <DestTime>2015-08-21T14:00:18.1380589+08:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2015-08-18T19:16:32+08:00</ImporterTime>
   <Processor>SongProcessor</Processor>

@@ -12,21 +12,21 @@ namespace TakeAWalk.Actor
     /// Actor animation class.
     /// This is used for drawing animation sprite.
     /// </summary>
-    class CAnimation : CBaseActor
+    public class CAnimation : CBaseActor
     {
        
         /// <summary>
         /// frame index for calculate drawrect.
         /// </summary>
-        private int frameIndex;
+        protected int frameIndex;
         /// <summary>
         /// frame size for calculate drawrect
         /// </summary>
-        private int frameWidthSize;
+        protected int frameWidthSize;
         /// <summary>
         /// frame count.
         /// </summary>
-        private int frameCount;
+        protected int frameCount;
 
         /// <summary>
         /// Constructor.

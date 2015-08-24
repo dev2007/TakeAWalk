@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using System;
@@ -22,7 +23,7 @@ namespace TakeAWalk.Script
         /// <summary>
         /// Contentmanager for get resources.
         /// </summary>
-        private ContentManager contentManager;
+        protected ContentManager contentManager;
         /// <summary>
         /// Constructor.
         /// Initialize contentmanager & create one default CStage object.

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input.Touch;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace TakeAWalk.Stage
 
         public void ReceiveNotice(Notice notice)
         {
+            if(notice == Notice.SWTICH_STAGE)
+            {
+                StopMusic();
+            }
+
            if(director != null)
            {
                director.ReceiveNotice(notice);
@@ -50,7 +56,7 @@ namespace TakeAWalk.Stage
             this.director = director;
         }
 
-        public void Update(Microsoft.Xna.Framework.GameTime gameTime)
+        public virtual void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             foreach (ISprite actor in actorList)
             {
@@ -58,7 +64,7 @@ namespace TakeAWalk.Stage
             }
         }
 
-        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
+        public virtual void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
         {
             foreach (ISprite actor in actorList)
             {
@@ -68,7 +74,7 @@ namespace TakeAWalk.Stage
 
         public void PlayMusic(Song song, bool isRepeating=true)
         {
-            MediaPlayer.IsRepeating = true;
+            MediaPlayer.IsRepeating = isRepeating;
             if (MediaPlayer.GameHasControl &&MediaPlayer.State != MediaState.Playing)
                 MediaPlayer.Play(song);   
         }
