@@ -23,6 +23,10 @@ namespace TakeAWalk
         /// Millsecond per frame.
         /// </summary>
         public const int MILLISECONDS_PER_FRAME = 80;
+        /// <summary>
+        /// move velocity
+        /// </summary>
+        public const int VELOCITY_MOVE = 5;
     }
 
     /// <summary>

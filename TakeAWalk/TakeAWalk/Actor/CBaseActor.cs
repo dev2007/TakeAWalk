@@ -44,6 +44,10 @@ namespace TakeAWalk.Actor
 
         protected Color maskColor;
 
+        protected float textureScale;
+
+        public Rectangle ObjectRect{get;protected set;}
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -52,6 +56,8 @@ namespace TakeAWalk.Actor
         /// <param name="layerDepth">Layer Depth.</param>
         public CBaseActor(Texture2D texture, Vector2 drawPosition, float layerDepth)
         {
+            this.ObjectRect = new Rectangle((int)drawPosition.X, (int)drawPosition.Y, texture.Width, texture.Height);
+            textureScale = 1f;
             this.maskColor = Color.White;
             this.isRunning = true;
             this.timeSinceLastFrame = 0;
@@ -88,7 +94,7 @@ namespace TakeAWalk.Actor
 
         public virtual void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
         {
-            spriteBatch.Draw(texture, drawPosition,drawRect, maskColor, 0, Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
+            spriteBatch.Draw(texture, drawPosition, drawRect, maskColor, 0, Vector2.Zero, textureScale, SpriteEffects.None, layerDepth);
         }
 
         public virtual void Update(GameTime gameTime)

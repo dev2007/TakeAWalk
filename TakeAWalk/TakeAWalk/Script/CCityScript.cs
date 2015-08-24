@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using TakeAWalk.Actor;
 using TakeAWalk.ActorFactory;
+using TakeAWalk.Stage;
 
 namespace TakeAWalk.Script
 {
@@ -13,7 +14,7 @@ namespace TakeAWalk.Script
         public CCityScript(ContentManager contentManager)
             : base(contentManager)
         {
-
+            stage = new CCityStage();
         }
 
         protected override void CreateStage()

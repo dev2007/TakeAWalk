@@ -11,8 +11,8 @@ namespace TakeAWalk.Stage
 {
     public class CStage : ISprite,INotice
     {
-        private IList<IActor> actorList;
-        private CDirector director;
+        protected IList<IActor> actorList;
+        protected CDirector director;
 
         public CStage()
         {

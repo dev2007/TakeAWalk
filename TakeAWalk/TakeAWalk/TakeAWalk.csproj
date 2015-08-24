@@ -43,6 +43,7 @@
     <Compile Include="Actor\CActor.cs" />
     <Compile Include="Actor\CAnimation.cs" />
     <Compile Include="Actor\CBaseActor.cs" />
+    <Compile Include="Actor\CBlock.cs" />
     <Compile Include="Actor\CRole.cs" />
     <Compile Include="Actor\IActor.cs" />
     <Compile Include="CDirector.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Script\CStartScript.cs" />
     <Compile Include="Script\CWaitScript.cs" />
     <Compile Include="Script\IScript.cs" />
+    <Compile Include="Stage\CCityStage.cs" />
     <Compile Include="Stage\CSplashStage.cs" />
     <Compile Include="Stage\CStage.cs" />
     <Compile Include="Stage\CStartStage.cs" />

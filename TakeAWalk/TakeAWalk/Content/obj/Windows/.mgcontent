@@ -19,5 +19,8 @@
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Images/headphone.bmp</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
     <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/wait.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/jump.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Sprites/walk.png</File>
+    <File>D:/AwuProjects/GitHub/TakeAWalk/TakeAWalk/TakeAWalk/Content/Blocks/box_2.png</File>
   </SourceFiles>
 </SourceFileCollection>
