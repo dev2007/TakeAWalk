@@ -8,4 +8,4 @@
 * One monogame programming instrucion is <a href='https://software.intel.com/en-us/articles/developing-games-with-monogame'>HERE</a>.
 
 #Copyright
-All resource files come from the flash game 'take a walk'.They CAN NOT be used solely for other purpose.
+All resource files are extracted from the flash game 'take a walk'.They **CAN NOT** be used solely for other purposes.
