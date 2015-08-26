@@ -14,7 +14,7 @@ namespace TakeAWalk.Actor
     /// </summary>
     public class CAnimation : CBaseActor
     {
-       
+
         /// <summary>
         /// frame index for calculate drawrect.
         /// </summary>
@@ -28,18 +28,18 @@ namespace TakeAWalk.Actor
         /// </summary>
         protected int frameCount;
 
+        private int timeSinceLastFrame;
+
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="texture">Texture2D resource.It is a image which is consist of sequent frame images.</param>
         /// <param name="vector">Draw postion.</param>
         /// <param name="layerDepth">Layer Depth.</param>
-        public CAnimation(Texture2D texture, Vector2 vector, float layerDepth):base(texture,vector,layerDepth)
+        public CAnimation(string spriteName, Vector2 centerPosition, float layerDepth, float scale = 1f)
+            : base(spriteName, centerPosition, layerDepth, scale)
         {
-            this.frameCount = Global.MILLISECONDS_PER_FRAME;
-            this.frameWidthSize = Global.STANDARD_ANIMATION_SIZE;
-            this.frameIndex = 0;
-            drawRect = new Rectangle(0, 0, Global.STANDARD_ANIMATION_SIZE, Global.STANDARD_ANIMATION_SIZE);
+
         }
 
         /// <summary>
@@ -69,15 +69,15 @@ namespace TakeAWalk.Actor
             }
             else
             {
-                this.frameWidthSize = texture.Width / splitCount;
+                this.frameWidthSize = sprite.Width / splitCount;
             }
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            
-            if(!isRunning)
+
+            if (!isRunning)
             {
                 frameIndex = 0;
             }
@@ -85,10 +85,10 @@ namespace TakeAWalk.Actor
             {
                 timeSinceLastFrame -= frameCount;
                 frameIndex++;
-                if (frameIndex >= texture.Width / frameWidthSize)
+                if (frameIndex >= sprite.Width / frameWidthSize)
                     frameIndex = 0;
             }
-            drawRect = new Rectangle(frameIndex * frameWidthSize, 0,frameWidthSize, texture.Height);
+            spriteDrawRect = new Rectangle(frameIndex * frameWidthSize, 0, frameWidthSize, sprite.Height);
         }
     }
 }

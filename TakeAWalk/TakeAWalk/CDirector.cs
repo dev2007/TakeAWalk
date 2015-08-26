@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework.Input.Touch;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TakeAWalk.Script;
+﻿using System.Collections.Generic;
 using TakeAWalk.Stage;
 
 namespace TakeAWalk
@@ -21,7 +16,7 @@ namespace TakeAWalk
         /// <summary>
         /// Script list.
         /// </summary>
-        private IList<IScript> scriptList;
+        private IList<CStage> stageList;
         /// <summary>
         /// Script indexer.
         /// </summary>
@@ -29,13 +24,13 @@ namespace TakeAWalk
 
         public CDirector()
         {
-            this.scriptList = new List<IScript>();
+            this.stageList = new List<CStage>();
             this.stageIndex = -1;
         }
 
-        public CDirector(IList<IScript> scriptList)
+        public CDirector(IList<CStage> scriptList)
         {
-            this.scriptList = scriptList;
+            this.stageList = scriptList;
             this.stageIndex = -1;
         }
 
@@ -43,9 +38,9 @@ namespace TakeAWalk
         /// add script for director.
         /// </summary>
         /// <param name="storyScript"></param>
-        public void AddScript(IScript storyScript)
+        public void AddScript(CStage storyScript)
         {
-            scriptList.Add(storyScript);
+            stageList.Add(storyScript);
         }
 
         /// <summary>
@@ -64,15 +59,15 @@ namespace TakeAWalk
         public bool NextScript()
         {
             if (currentStage != null)
-                currentStage.ReceiveNotice(Notice.SWTICH_STAGE);
+                currentStage.UnRegisterDirector();
 
-            if (stageIndex == scriptList.Count - 1)
+            if (stageIndex == stageList.Count - 1)
             {
                 return false;
             }
 
             stageIndex++;
-            currentStage = scriptList[stageIndex].GetStage();
+            currentStage = stageList[stageIndex];
             currentStage.RegisterDirector(this);
             return true;
         }
@@ -90,7 +85,7 @@ namespace TakeAWalk
                 case Notice.ACTION_FINISH:
                     if (!NextScript())
                     {
-                        currentStage = new CStage();
+                        currentStage = null;
                         //TODO:all scene finish.
                     }
                     break;
@@ -105,7 +100,7 @@ namespace TakeAWalk
         /// <returns></returns>
         private int ScriptSize()
         {
-            return scriptList.Count;
+            return stageList.Count;
         }
 
         public void Update(Microsoft.Xna.Framework.GameTime gameTime)

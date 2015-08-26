@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TakeAWalk.Stage;
+using TakeAWalk.Utils;
 
 namespace TakeAWalk.Actor
 {
     /// <summary>
     /// base class of actor.b
     /// </summary>
-    public class CBaseActor:ISprite,IActor
+    public class CBaseActor : ISprite, IActor
     {
         /// <summary>
         /// texture2d resource.
         /// </summary>
-        protected Texture2D texture;
+        protected Texture2D sprite;
         /// <summary>
-        /// draw position.
+        /// sprite center position.
         /// </summary>
-        protected Vector2 drawPosition;
+        private Vector2 center;
         /// <summary>
-        /// drawing rectangle,part of the image.
-        /// </summary>
-        protected Rectangle drawRect;
-        /// <summary>
-        /// layer depth.
+        ///  layer depth.
         /// </summary>
         protected float layerDepth;
         /// <summary>
-        /// count frame time.
+        ///  sprite scale value.
         /// </summary>
-        protected int timeSinceLastFrame;
+        private float spriteScale;
+        /// <summary>
+        /// drawing rectangle,part of the image.
+        /// </summary>
+        protected Rectangle spriteDrawRect;
+        /// <summary>
+        /// destination drawing rectangle
+        /// </summary>
+        protected Rectangle destinationRect;
         /// <summary>
         /// animation running flag. 
         /// </summary>
@@ -42,39 +47,39 @@ namespace TakeAWalk.Actor
         /// </summary>
         private CStage stage;
 
-        protected Color maskColor;
-
-        protected float textureScale;
-
-        public Rectangle ObjectRect{get;protected set;}
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="texture">Texture2D resource.It is a image which is consist of sequent frame images.</param>
-        /// <param name="drawPosition">Draw postion.</param>
-        /// <param name="layerDepth">Layer Depth.</param>
-        public CBaseActor(Texture2D texture, Vector2 drawPosition, float layerDepth)
+        public CBaseActor(string spriteName, Vector2 centerPosition, float layerDepth,float scale=1f)
         {
-            this.ObjectRect = new Rectangle((int)drawPosition.X, (int)drawPosition.Y, texture.Width, texture.Height);
-            textureScale = 1f;
-            this.maskColor = Color.White;
-            this.isRunning = true;
-            this.timeSinceLastFrame = 0;
+            this.sprite = AppUtils.LoadContent(spriteName);
+            this.center = centerPosition;
             this.layerDepth = layerDepth;
-            this.texture = texture;
-            this.drawPosition = drawPosition; 
-            this.drawRect = new Rectangle(new Point(0, 0), new Point(texture.Width, texture.Height));
+
+            this.spriteScale = 1f;
+            this.spriteDrawRect = new Rectangle(new Point(0, 0), new Point(sprite.Width, sprite.Height));
+            this.destinationRect = new Rectangle((int)(center.X - spriteDrawRect.Width / 2), (int)(center.Y - spriteDrawRect.Height / 2),sprite.Width,sprite.Height);
+            this.isRunning = true;
         }
 
         /// <summary>
-        ///  Set the animation on the new position.
+        /// set the sprite's draw desitination rectangle.
         /// </summary>
-        /// <param name="newPosition"></param>
-        public void SetDrawVector(Vector2 newPosition)
+        /// <param name="width">draw width</param>
+        /// <param name="height">draw height</param>
+        /// <param name="x">draw position for x axis.</param>
+        /// <param name="y">draw position for y axis.</param>
+        public void SetDestinationRect(int width,int height,int x=0,int y=0)
         {
-            this.drawPosition = newPosition;
+            destinationRect = new Rectangle(x, y, width, height);
+            center = new Vector2((width - x) / 2, (height - x) / 2);
         }
+
+        public void SetCenter(int x,int y)
+        {
+            center = new Vector2(x, y);
+            destinationRect = new Rectangle((int)(center.X - spriteDrawRect.Width / 2), (int)(center.Y - spriteDrawRect.Height / 2), sprite.Width, sprite.Height);
+        }
+
+
+        #region Actor running functions. 
 
         /// <summary>
         /// Animation move.
@@ -91,18 +96,23 @@ namespace TakeAWalk.Actor
         {
             isRunning = false;
         }
+        #endregion
 
         public virtual void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.GameTime gameTime)
         {
-            spriteBatch.Draw(texture, drawPosition, drawRect, maskColor, 0, Vector2.Zero, textureScale, SpriteEffects.None, layerDepth);
+            //spriteBatch.Draw(sprite, drawPosition, spriteDrawRect, maskColor, 0, Vector2.Zero, spriteScale, SpriteEffects.None, layerDepth);
+            spriteBatch.Draw(sprite,
+                new Vector2(center.X - spriteDrawRect.Width / 2, center.Y - spriteDrawRect.Height / 2),
+                spriteDrawRect, Color.White,0, Vector2.Zero, spriteScale, SpriteEffects.None, layerDepth);
         }
 
         public virtual void Update(GameTime gameTime)
         {
         }
 
+        #region  Register to stage & nofity functions.
         /// <summary>
-        /// Registe stage.
+        /// Register stage.
         /// </summary>
         /// <param name="stage"></param>
         public void RegisterStage(CStage stage)
@@ -111,7 +121,7 @@ namespace TakeAWalk.Actor
         }
 
         /// <summary>
-        /// Unregiste stage.
+        /// Unregister stage.
         /// </summary>
         /// <param name="stage"></param>
         public void UnRegisterStage(CStage stage)
@@ -126,10 +136,11 @@ namespace TakeAWalk.Actor
         /// <param name="notice"></param>
         public void NotifyStage(Notice notice)
         {
-            if(stage != null)
+            if (stage != null)
             {
                 stage.ReceiveNotice(notice);
             }
         }
+        #endregion
     }
 }

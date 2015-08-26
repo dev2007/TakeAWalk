@@ -1,10 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Input.Touch;
-using TakeAWalk.Actor;
-using TakeAWalk.Script;
 using TakeAWalk.Stage;
+using TakeAWalk.Utils;
 
 namespace TakeAWalk
 {
@@ -38,7 +36,7 @@ namespace TakeAWalk
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            AppUtils.Manager = this.Content;
             base.Initialize();
         }
 
@@ -53,9 +51,9 @@ namespace TakeAWalk
 
             // TODO: use this.Content to load your game content here
             director = new CDirector();
-            director.AddScript(new CStartScript(this.Content));
-            director.AddScript(new CWaitScript(this.Content));
-            director.AddScript(new CCityScript(this.Content));
+            //director.AddScript(new CStartStage());
+            director.AddScript(new CSplashStage());
+            director.AddScript(new CCityStage());
             director.Action();
         }
 
