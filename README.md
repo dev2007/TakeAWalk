@@ -7,5 +7,7 @@
   
 * One monogame programming instruction is <a href='https://software.intel.com/en-us/articles/developing-games-with-monogame'>HERE</a>.
 
+* Physic system come from **Farseer-Physics**,the link is https://github.com/tinco/Farseer-Physics. 
+
 #Copyright
 All resource files are extracted from the flash game 'take a walk'.They **CAN NOT** be used solely for other purposes.
