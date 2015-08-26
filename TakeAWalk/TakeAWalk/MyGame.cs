@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FarseerPhysics;
+using FarseerPhysics.Dynamics;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using TakeAWalk.Stage;
@@ -16,6 +18,7 @@ namespace TakeAWalk
 
         CDirector director;
 
+
         /// <summary>
         /// Constructor. 
         /// </summary>
@@ -25,6 +28,7 @@ namespace TakeAWalk
             graphics.PreferredBackBufferWidth = Global.WINDOW_WIDTH;
             graphics.PreferredBackBufferHeight = Global.WINDOW_HEIGHT;
             Content.RootDirectory = "Content";
+            //create physic world.
         }
 
         /// <summary>
@@ -50,9 +54,10 @@ namespace TakeAWalk
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            ConvertUnits.SetDisplayUnitToSimUnitRatio(64f);
             director = new CDirector();
             //director.AddScript(new CStartStage());
-            director.AddScript(new CSplashStage());
+            //director.AddScript(new CSplashStage());
             director.AddScript(new CCityStage());
             director.Action();
         }
@@ -77,6 +82,7 @@ namespace TakeAWalk
                 Exit();
 
             // TODO: Add your update logic here
+            PhysicWorld.World.Step((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f);
             director.Update(gameTime);
             base.Update(gameTime);
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarseerPhysics.Dynamics;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,5 +42,18 @@ namespace TakeAWalk
         public const float NEAR_STAGE = 0.6f;
         public const float REMOTE_STAGE = 0.8f;
         public const float BACKGROUND = 1.0f;
+    }
+
+    public class PhysicWorld
+    {
+        private static World _world = new World(new Vector2(0, 9.82f));
+
+        public static World World
+        {
+            get
+            {
+                return _world;
+            }
+        }
     }
 }

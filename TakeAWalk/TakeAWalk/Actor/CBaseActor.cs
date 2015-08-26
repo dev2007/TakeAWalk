@@ -29,7 +29,7 @@ namespace TakeAWalk.Actor
         /// <summary>
         ///  sprite scale value.
         /// </summary>
-        private float spriteScale;
+        protected float spriteScale;
         /// <summary>
         /// drawing rectangle,part of the image.
         /// </summary>
@@ -53,7 +53,7 @@ namespace TakeAWalk.Actor
             this.center = centerPosition;
             this.layerDepth = layerDepth;
 
-            this.spriteScale = 1f;
+            this.spriteScale = scale;
             this.spriteDrawRect = new Rectangle(new Point(0, 0), new Point(sprite.Width, sprite.Height));
             this.destinationRect = new Rectangle((int)(center.X - spriteDrawRect.Width / 2), (int)(center.Y - spriteDrawRect.Height / 2),sprite.Width,sprite.Height);
             this.isRunning = true;

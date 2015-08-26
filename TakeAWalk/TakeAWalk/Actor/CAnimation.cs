@@ -39,7 +39,8 @@ namespace TakeAWalk.Actor
         public CAnimation(string spriteName, Vector2 centerPosition, float layerDepth, float scale = 1f)
             : base(spriteName, centerPosition, layerDepth, scale)
         {
-
+            this.frameCount = Global.MILLISECONDS_PER_FRAME;
+            this.frameWidthSize = Global.STANDARD_ANIMATION_SIZE;
         }
 
         /// <summary>

@@ -24,7 +24,10 @@ namespace TakeAWalk.Stage
 
         protected override void InitActors()
         {
-            
+            CRole role = new CRole(@"Sprites\walk", new Vector2(Global.WINDOW_WIDTH / 2, 0),7,Z_Axis.STAGE);
+            HireActor(role);
+            CBlock block = new CBlock(@"Blocks\box_2", new Vector2(Global.WINDOW_WIDTH / 2, Global.WINDOW_HEIGHT / 2), Z_Axis.STAGE, 1f);
+            HireActor(block);
         }
     }
 }
