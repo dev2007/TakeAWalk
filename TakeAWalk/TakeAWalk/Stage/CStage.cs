@@ -23,6 +23,18 @@ namespace TakeAWalk.Stage
         /// director object.
         /// </summary>
         protected CDirector director;
+        protected CRole role;
+
+        public float RoleVelocity
+        {
+            get
+            {
+                if (role == null)
+                    return 0;
+
+                return role.BasicVelocity.X;
+            }
+        }
 
         public CStage()
         {
@@ -75,7 +87,7 @@ namespace TakeAWalk.Stage
         #endregion
 
         #region Notify & Register to Director.
-        public void ReceiveNotice(Notice notice)
+        public virtual void ReceiveNotice(Notice notice)
         {
            if(director != null)
            {
@@ -131,7 +143,7 @@ namespace TakeAWalk.Stage
         {
             MediaPlayer.IsRepeating = isRepeating;
             if (MediaPlayer.GameHasControl && MediaPlayer.State != MediaState.Playing)
-                MediaPlayer.Play(AppUtils.LoadSong(songName));  
+                MediaPlayer.Play(AppUtils.LoadSong(songName));
         }
 
         /// <summary>
@@ -140,6 +152,15 @@ namespace TakeAWalk.Stage
         public void PauseMusic()
         {
             MediaPlayer.Pause();
+        }
+
+        /// <summary>
+        /// resume music.
+        /// </summary>
+        public void ResumeMusic()
+        {
+            if (MediaPlayer.State == MediaState.Paused)
+                MediaPlayer.Resume();
         }
 
         /// <summary>

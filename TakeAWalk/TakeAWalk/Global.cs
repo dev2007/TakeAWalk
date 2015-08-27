@@ -12,11 +12,11 @@ namespace TakeAWalk
         /// <summary>
         /// Diy window's width;
         /// </summary>
-        public const int WINDOW_WIDTH = 800;
+        public const int WINDOW_WIDTH = 1024;
         /// <summary>
         /// Diy Windows's height.
         /// </summary>
-        public const int WINDOW_HEIGHT = 600;
+        public const int WINDOW_HEIGHT = 800;
         /// <summary>
         /// Standard animation frame height & width. 
         /// </summary>
@@ -42,6 +42,15 @@ namespace TakeAWalk
         public const float NEAR_STAGE = 0.6f;
         public const float REMOTE_STAGE = 0.8f;
         public const float BACKGROUND = 1.0f;
+    }
+
+    public enum MoveDirect
+    {
+        HOLD = 0,
+        RIGHT = 1,
+        LEFT = 2,
+        UP = 3,
+        DOWN = 4
     }
 
     public class PhysicWorld

@@ -10,6 +10,10 @@ namespace TakeAWalk
     public class CDirector : ISprite, INotice
     {
         /// <summary>
+        /// Game object.
+        /// </summary>
+        private MyGame _game;
+        /// <summary>
         /// Current stage object.
         /// </summary>
         private CStage currentStage;
@@ -22,8 +26,9 @@ namespace TakeAWalk
         /// </summary>
         private int stageIndex;
 
-        public CDirector()
+        public CDirector(MyGame game)
         {
+            _game = game;
             this.stageList = new List<CStage>();
             this.stageIndex = -1;
         }
@@ -69,6 +74,7 @@ namespace TakeAWalk
             stageIndex++;
             currentStage = stageList[stageIndex];
             currentStage.RegisterDirector(this);
+            _game.Notice(currentStage.RoleVelocity);
             return true;
         }
 

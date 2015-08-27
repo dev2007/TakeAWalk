@@ -18,6 +18,10 @@ namespace TakeAWalk
 
         CDirector director;
 
+        Matrix _view;
+        Vector2 _cameraPosition;
+        private Vector2 _screenCenter;
+        private float viewMoveVelocity;
 
         /// <summary>
         /// Constructor. 
@@ -54,12 +58,21 @@ namespace TakeAWalk
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            _view = Matrix.Identity;
+            _cameraPosition = Vector2.Zero;
+            _screenCenter = new Vector2(Global.WINDOW_WIDTH / 2f, Global.WINDOW_HEIGHT / 2f);
+
             ConvertUnits.SetDisplayUnitToSimUnitRatio(64f);
-            director = new CDirector();
+            director = new CDirector(this);
             //director.AddScript(new CStartStage());
             //director.AddScript(new CSplashStage());
             director.AddScript(new CCityStage());
             director.Action();
+        }
+
+        public void Notice(float stageVelocity)
+        {
+            viewMoveVelocity = stageVelocity;
         }
 
         /// <summary>
@@ -82,9 +95,23 @@ namespace TakeAWalk
                 Exit();
 
             // TODO: Add your update logic here
+            CameraUpdate();
             PhysicWorld.World.Step((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f);
             director.Update(gameTime);
             base.Update(gameTime);
+        }
+
+        private void CameraUpdate()
+        {
+            KeyboardState state = Keyboard.GetState();
+            if (state.IsKeyDown(Keys.D) || state.IsKeyDown(Keys.Left))
+                _cameraPosition.X += viewMoveVelocity;
+
+            if (state.IsKeyDown(Keys.Right))
+                _cameraPosition.X -= viewMoveVelocity;
+
+
+            _view = Matrix.CreateTranslation(new Vector3(_cameraPosition - _screenCenter, 0f)) * Matrix.CreateTranslation(new Vector3(_screenCenter, 0f));
         }
 
         /// <summary>
@@ -96,7 +123,7 @@ namespace TakeAWalk
             GraphicsDevice.Clear(Color.White);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin(SpriteSortMode.BackToFront,BlendState.NonPremultiplied);
+            spriteBatch.Begin(SpriteSortMode.BackToFront,null,null,null,null,null,_view);
             
             director.Draw(spriteBatch, gameTime);      
             spriteBatch.End();

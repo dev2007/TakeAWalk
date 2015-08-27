@@ -47,6 +47,14 @@ namespace TakeAWalk.Actor
         /// </summary>
         private CStage stage;
 
+        public Rectangle SpriteBound
+        {
+            get
+            {
+                return sprite.Bounds;
+            }
+        }
+
         public CBaseActor(string spriteName, Vector2 centerPosition, float layerDepth,float scale=1f)
         {
             this.sprite = AppUtils.LoadContent(spriteName);

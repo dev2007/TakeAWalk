@@ -30,6 +30,18 @@ namespace TakeAWalk
         /// <summary>
         /// switch stage
         /// </summary>
-        SWTICH_STAGE = 2
+        SWTICH_STAGE = 2,
+        /// <summary>
+        /// new action.
+        /// </summary>
+        ACTION_START = 3,
+        /// <summary>
+        /// play music.
+        /// </summary>
+        PLAY_MUSIC = 4,
+        /// <summary>
+        /// pause music.
+        /// </summary>
+        PAUSE_MUSIC=5
     }
 }

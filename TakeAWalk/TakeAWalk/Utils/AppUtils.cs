@@ -27,5 +27,13 @@ namespace TakeAWalk.Utils
 
             return Manager.Load<Song>(songName);
         }
+
+        public static SpriteFont LoadFont(string fontName)
+        {
+            if (Manager == null)
+                throw new Exception("ex: Manager not be initialized.");
+
+            return Manager.Load<SpriteFont>(fontName);
+        }
     }
 }
