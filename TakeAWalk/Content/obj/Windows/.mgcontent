@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/office.jpg</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Sprites/start.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/officebackground.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/title.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_calm.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_fly.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_happy.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_keyboard.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_opendoor.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_ring.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_sohappy.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Music/Sound_unhappy.mp3</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/headphone.bmp</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Sprites/happywalk.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Sprites/wait.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Sprites/jump.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Sprites/walk.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Blocks/box_2.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Blocks/countryroad.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Blocks/brick.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Blocks/brickscale.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building1.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building2.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building3.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building4.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building5.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/building6.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/cityblock1.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/lamp1.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/lamp2.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/machinery1.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/machinery2.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/cityremote1.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/cityremote2.png</File>
+    <File>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/cityremote3.png</File>
+  </SourceFiles>
+</SourceFileCollection>
