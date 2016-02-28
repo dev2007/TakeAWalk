@@ -66,3 +66,5 @@ D:\WorkSpaces\TakeAWalk\TakeAWalk\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\WorkSpaces\TakeAWalk\TakeAWalk\obj\x86\Debug\TakeAWalk.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\TakeAWalk\TakeAWalk\obj\x86\Debug\TakeAWalk.exe
 D:\WorkSpaces\TakeAWalk\TakeAWalk\obj\x86\Debug\TakeAWalk.pdb
+D:\WorkSpaces\TakeAWalk\TakeAWalk\bin\Windows\Debug\MonoBo.dll
+D:\WorkSpaces\TakeAWalk\TakeAWalk\bin\Windows\Debug\MonoBo.pdb
