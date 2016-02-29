@@ -1,9 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using MonoBo;
 using MonoBo.Sprite;
+using MonoBo.Utils;
 using TakeAWalk.Script;
 
 namespace TakeAWalk
@@ -47,10 +49,7 @@ namespace TakeAWalk
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            Texture2D texture = this.Content.Load<Texture2D>(@"Images\office");
-            director = new CDirector(new CStartScript(this.Content));
-
+            director = new CGameDirector(new CStartScript(this.Content),this.Content);
         }
 
         /// <summary>
@@ -69,12 +68,21 @@ namespace TakeAWalk
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             if (TouchPanel.IsGestureAvailable)
             {
                 director.Change(TouchPanel.ReadGesture());
+            }
+            else if (Helper.ContainKey(Keyboard.GetState().GetPressedKeys(), Keys.Up)
+                    || Helper.ContainKey(Keyboard.GetState().GetPressedKeys(), Keys.Down)
+                    || Helper.ContainKey(Keyboard.GetState().GetPressedKeys(), Keys.Right)
+                    || Helper.ContainKey(Keyboard.GetState().GetPressedKeys(), Keys.Left)
+                    || Helper.ContainKey(Keyboard.GetState().GetPressedKeys(), Keys.Space))
+            {
+                director.Change(Keyboard.GetState().GetPressedKeys());
             }
             else
                 director.Update(gameTime);
@@ -91,7 +99,7 @@ namespace TakeAWalk
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.FrontToBack);
 
             director.Draw(spriteBatch, gameTime);
             spriteBatch.End();

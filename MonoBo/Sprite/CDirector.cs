@@ -1,5 +1,8 @@
-﻿using Microsoft.Xna.Framework.Input.Touch;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 using MonoBo.Script;
+using MonoBo.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,33 +17,54 @@ namespace MonoBo.Sprite
     /// </summary>  
     public class CDirector : ISprite
     {
-        private CStage stage;
+        protected ContentManager contentManager;
+        protected CStage stage;
+        protected IList<IScript> scriptList;
+        protected int currentScriptIndex = 0;
 
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="storyScript">the script for creating stage to display.</param>
-        public CDirector(IScript storyScript)
+        /// <param name="contentManager">content manager object.</param>
+        public CDirector(IScript storyScript,ContentManager contentManager)
         {
+            this.contentManager = contentManager;
             stage = storyScript.CreateStage();
+            scriptList = new List<IScript>();
+            scriptList.Add(storyScript);
         }
 
         /// <summary>
         /// Switch to other script.
         /// </summary>
         /// <param name="storyScript"></param>
-        public void SwitchScript(IScript storyScript)
+        public void SwitchNextScript(IScript storyScript)
         {
             stage = storyScript.CreateStage();
+            scriptList.Add(storyScript);
+            currentScriptIndex++;
+        }
+
+
+        /// <summary>
+        /// Stage change.
+        /// </summary>
+        /// <param name="gesture">gesture event.</param>
+        /// <returns>true,event is transfer.</returns>
+        public virtual bool Change(GestureSample gesture)
+        {
+            return stage.Change(gesture);
         }
 
         /// <summary>
-        /// Stage stage change.
+        /// Stage  change.
         /// </summary>
-        /// <param name="gesture"></param>
-        public void Change(GestureSample gesture)
+        /// <param name="pressedKeys">press keyboard.</param>
+        /// <returns>true,event is transfer.</returns>
+        public virtual bool Change(Keys[] pressedKeys)
         {
-            stage.Change(gesture);
+            return stage.Change(pressedKeys);
         }
 
         /// <summary>

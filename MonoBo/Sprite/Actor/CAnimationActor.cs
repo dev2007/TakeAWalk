@@ -93,15 +93,27 @@ namespace MonoBo.Sprite.Actor
         }
 
         /// <summary>
-        /// Animation draw.
+        /// Animation actor change.
         /// </summary>
-        /// <param name="gesture"></param>
-        public override void Change(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
+        /// <param name="gesture">gesture event.</param>
+        /// <returns>true,event is not transfer.</returns>
+        public override bool Change(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
         {
             if (gesture.GestureType == GestureType.Flick)
             {
                 isRunning = !isRunning;
             }
+            return base.Change(gesture);
+        }
+
+        /// <summary>
+        ///    Animation actor change.
+        /// </summary>
+        /// <param name="pressedKeys">press keys.</param>
+        /// <returns>true,event is not transfer.</returns>
+        public override bool Change(Microsoft.Xna.Framework.Input.Keys[] pressedKeys)
+        {
+            return base.Change(pressedKeys);
         }
     }
 }

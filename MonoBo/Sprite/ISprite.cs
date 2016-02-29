@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,16 @@ namespace MonoBo.Sprite
         /// <summary>
         /// state change.
         /// </summary>
-        /// <param name="gesture"></param>
-        void Change(GestureSample gesture);
+        /// <param name="gesture">gesture event.</param>
+        /// /// <returns>true,event is not transfer.</returns>
+        bool Change(GestureSample gesture);
+
+        /// <summary>
+        /// state change.
+        /// </summary>
+        /// <param name="pressdKeys">press keyboard.</param>
+        /// <returns>true,event is not transfer.</returns>
+        bool Change(Keys[] pressdKeys);
 
         /// <summary>
         /// stage update.

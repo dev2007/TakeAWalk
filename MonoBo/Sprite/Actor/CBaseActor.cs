@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -117,10 +118,24 @@ namespace MonoBo.Sprite.Actor
         /// <summary>
         /// Actor change.
         /// </summary>
-        /// <param name="gesture"></param>
-        public virtual void Change(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
+        /// <param name="gesture">gesture event.</param>
+        /// <returns>true,event is not transfer.</returns>
+        public virtual bool Change(Microsoft.Xna.Framework.Input.Touch.GestureSample gesture)
         {
+            return false;
         }
+
+
+        /// <summary>
+        /// Actor change.
+        /// </summary>
+        /// <param name="pressedKeys">press keys.</param>
+        /// <returns>true,event is not transfer.</returns>
+        public virtual bool Change(Keys[] pressedKeys)
+        {
+            return false;
+        }
+
 
         /// <summary>
         /// Actor update.
@@ -128,6 +143,7 @@ namespace MonoBo.Sprite.Actor
         /// <param name="gameTime"></param>
         public virtual void Update(GameTime gameTime)
         {
+
         }
     }
 }

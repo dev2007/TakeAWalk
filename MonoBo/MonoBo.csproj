@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Global.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\CBaseScript.cs" />
     <Compile Include="Script\IScript.cs" />
     <Compile Include="Sprite\Actor\CAnimationActor.cs" />
     <Compile Include="Sprite\Actor\CBaseActor.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Sprite\CDirector.cs" />
     <Compile Include="Sprite\CStage.cs" />
     <Compile Include="Sprite\ISprite.cs" />
+    <Compile Include="Utils\Helper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

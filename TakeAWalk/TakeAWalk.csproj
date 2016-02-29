@@ -38,6 +38,8 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CGameDirector.cs" />
+    <Compile Include="Script\CFirstScript.cs" />
     <Compile Include="Script\CStartScript.cs" />
     <Compile Include="TheGame.cs" />
     <Compile Include="Program.cs" />
