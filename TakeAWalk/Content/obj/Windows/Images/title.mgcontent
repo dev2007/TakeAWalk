@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/Images/title.png</SourceFile>
-  <SourceTime>2016-02-27T11:45:20.9443849+08:00</SourceTime>
+  <SourceTime>2016-03-02T16:18:30.0101412+08:00</SourceTime>
   <DestFile>D:/WorkSpaces/TakeAWalk/TakeAWalk/Content/bin/Windows/Images/title.xnb</DestFile>
-  <DestTime>2016-02-27T11:47:02.8892158+08:00</DestTime>
+  <DestTime>2016-03-02T16:31:20.0546471+08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-30T01:14:44+08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

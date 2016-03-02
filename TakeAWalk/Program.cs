@@ -14,7 +14,7 @@ namespace TakeAWalk
         [STAThread]
         static void Main()
         {
-            using (var game = new TheGame())
+            using (var game = new MyGame())
                 game.Run();
         }
     }
