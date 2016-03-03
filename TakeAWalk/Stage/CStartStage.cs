@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TakeAWalk.Actor;
+using TakeAWalk.Sprite.Actor;
 
 namespace TakeAWalk.Stage
 {

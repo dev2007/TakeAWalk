@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TakeAWalk.Sprite;
 using TakeAWalk.Stage;
 
 namespace TakeAWalk

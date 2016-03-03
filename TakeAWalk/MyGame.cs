@@ -32,7 +32,6 @@ namespace TakeAWalk
             graphics.PreferredBackBufferWidth = Global.WINDOW_WIDTH;
             graphics.PreferredBackBufferHeight = Global.WINDOW_HEIGHT;
             Content.RootDirectory = "Content";
-            //create physic world.
         }
 
         /// <summary>

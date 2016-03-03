@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using TakeAWalk.Utils;
 
-namespace TakeAWalk.Actor
+namespace TakeAWalk.Sprite.Actor
 {
     public class CRole : CAnimation
     {
@@ -56,7 +56,6 @@ namespace TakeAWalk.Actor
             }
             if (state.IsKeyDown(Keys.Up))
             {
-                
                 moveDirect = MoveDirect.UP;
                 //body.ApplyLinearImpulse(new Vector2(0, -1));
                 if (ValueCloseToZero(body.LinearVelocity.Y) && doubleJump <2)

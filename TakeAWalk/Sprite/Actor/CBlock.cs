@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TakeAWalk.Actor
+namespace TakeAWalk.Sprite.Actor
 {
     class CBlock : CActor
     {

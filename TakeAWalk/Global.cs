@@ -10,11 +10,11 @@ namespace TakeAWalk
     public class Global
     {
         /// <summary>
-        /// Diy window's width;
+        /// Window's width;
         /// </summary>
         public const int WINDOW_WIDTH = 1024;
         /// <summary>
-        /// Diy Windows's height.
+        /// Windows's height.
         /// </summary>
         public const int WINDOW_HEIGHT = 800;
         /// <summary>

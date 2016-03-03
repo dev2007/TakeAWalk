@@ -7,7 +7,7 @@ using System.Text;
 using TakeAWalk.Stage;
 using TakeAWalk.Utils;
 
-namespace TakeAWalk.Actor
+namespace TakeAWalk.Sprite.Actor
 {
     /// <summary>
     /// base class of actor.b

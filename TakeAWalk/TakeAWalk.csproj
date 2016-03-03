@@ -38,16 +38,16 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Actor\CActor.cs" />
-    <Compile Include="Actor\CAnimation.cs" />
-    <Compile Include="Actor\CBaseActor.cs" />
-    <Compile Include="Actor\CBlock.cs" />
-    <Compile Include="Actor\CRole.cs" />
-    <Compile Include="Actor\IActor.cs" />
-    <Compile Include="CDirector.cs" />
+    <Compile Include="Sprite\Actor\CActor.cs" />
+    <Compile Include="Sprite\Actor\CAnimation.cs" />
+    <Compile Include="Sprite\Actor\CBaseActor.cs" />
+    <Compile Include="Sprite\Actor\CBlock.cs" />
+    <Compile Include="Sprite\Actor\CRole.cs" />
+    <Compile Include="Sprite\Actor\IActor.cs" />
+    <Compile Include="Sprite\CDirector.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="INotice.cs" />
-    <Compile Include="ISprite.cs" />
+    <Compile Include="Sprite\ISprite.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,9 +74,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ActorFactory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
